@@ -1,0 +1,411 @@
+/* :root {}
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    --active-color: #f25454;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--active-color);
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../webfonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppinsBold;
+    src: url(../webfonts/Poppins-Bold.ttf);
+}
+
+
+/* ------- nav start ---------- */
+
+.navhead {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.288);
+}
+
+.navbar-nav a {
+    color: white;
+    padding: 0px 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.navbar-nav .active a {
+    color: var(--active-color);
+}
+
+.navbar-nav a:hover {
+    color: var(--active-color);
+}
+
+.navbar-nav .brands {
+    margin-left: 15px;
+}
+
+
+/* ------- nav end ---------- */
+
+
+/* --------  Home start  ------ */
+
+.home {
+    height: 100vh;
+    text-align: center;
+}
+
+.hometitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: titleanim 1.5s ease 0.5s 1 both;
+    transition: all 0.5s;
+}
+
+.hometitle h1 {
+    color: white;
+    font-size: 5vw;
+    font-weight: 900;
+}
+
+.crs-btn {
+    width: 50px;
+    text-align: center;
+    height: auto;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid white;
+    border-left: 0px;
+    position: absolute;
+    top: 45%;
+}
+
+.crs-btn li {
+    cursor: pointer;
+}
+
+.crs-btn li a {
+    position: relative;
+    z-index: 2;
+}
+
+.crs-btn li .back {
+    right: 100%;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    transition: all 0.5s;
+    z-index: 0;
+}
+
+.crs-btn li:hover .back {
+    right: 0%;
+}
+
+.sidebtn {
+    width: 30px;
+    position: fixed;
+    top: 30%;
+    left: 0%;
+    z-index: 999;
+}
+
+.sidebtn:hover+.sidebar {
+    opacity: 100;
+    left: 3%;
+}
+
+.sidebtn .colors {
+    margin: 5px 5px 5px 0px;
+}
+
+.sidebar {
+    width: 250px;
+    padding: 5px;
+    border-radius: 10px;
+    position: fixed;
+    top: 30%;
+    left: -100%;
+    opacity: 0;
+    z-index: 999;
+    transition: all 0.5s;
+}
+
+.mouse {
+    left: 50%;
+    bottom: 1%;
+    width: 27px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.mouse .wheel {
+    width: 10px;
+    height: 10px;
+    animation: wheel 2s ease infinite forwards;
+}
+
+@keyframes titleanim {
+    from {
+        opacity: 0;
+        transform: translate(100%, -50%);
+    }
+    to {
+        opacity: 100;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes wheel {
+    from {
+        transform: translate(0, 0%);
+        opacity: 100;
+    }
+    to {
+        transform: translate(0, 25px);
+        opacity: 0;
+    }
+}
+
+
+/* --------  Home end  ------ */
+
+
+/*--------- about screen start --------*/
+
+.title {
+    font-family: ' poppinsBold', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.title h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.2);
+    opacity: 0.5;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.title p {
+    position: absolute;
+    align-self: flex-end;
+    font-size: 2.5rem;
+    font-weight: 900;
+    padding: 10px 0px;
+}
+
+.title p::after {
+    content: "";
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 35%;
+    margin: auto;
+    transition: all .5s;
+}
+
+.title p:hover::after {
+    width: 55%;
+}
+
+.about .rightbar .progress {
+    height: 4px;
+}
+
+.about .rightbar .progress-bar {
+    border-bottom: 1px solid black;
+    background-color: var(--active-color);
+}
+
+.about .rightbar .prog-item:nth-child(1) .progress-bar,
+.about .rightbar .prog-item:nth-child(1) .head-progress {
+    width: 80%;
+}
+
+.about .rightbar .prog-item:nth-child(2) .progress-bar,
+.about .rightbar .prog-item:nth-child(2) .head-progress {
+    width: 95%;
+}
+
+.about .rightbar .prog-item:nth-child(3) .progress-bar,
+.about .rightbar .prog-item:nth-child(3) .head-progress {
+    width: 85%;
+}
+
+.about .rightbar .prog-item:nth-child(4) .progress-bar,
+.about .rightbar .prog-item:nth-child(4) s.head-progress {
+    width: 70%;
+}
+
+
+/*--------- about screen end --------*/
+
+
+/*--------- team screen start --------*/
+
+.redlayer {
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: 2;
+}
+
+.team figure img {
+    transition: all 0.2s;
+}
+
+.redlayer i {
+    cursor: pointer;
+}
+
+.team-item:hover .redlayer {
+    background-color: #f2545498;
+    opacity: 100;
+}
+
+.team-item:hover h6 {
+    color: var(--active-color);
+}
+
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+.teamfooter button {
+    color: white;
+    font-weight: 500;
+    background-color: var(--active-color);
+}
+
+
+/*--------- team screen end --------*/
+
+
+/*--------- services screen start --------*/
+
+.services {
+    background-color: #fafafa;
+}
+
+.service .icon {
+    color: var(--active-color);
+}
+
+.service:hover h6 {
+    color: var(--active-color);
+}
+
+
+/*--------- services screen end --------*/
+
+
+/*--------- clients screen start --------*/
+
+.clientimg img {
+    width: 15%;
+}
+
+
+/*--------- clients screen end--------*/
+
+
+/*--------- contactUs screen start--------*/
+
+.contact {
+    background-color: #fafafa;
+}
+
+.contact button {
+    background-color: var(--active-color);
+    border: none;
+    color: white;
+}
+
+.contactinfo:hover h6 {
+    color: var(--active-color);
+}
+
+.contactinfo .icon {
+    color: var(--active-color);
+}
+
+
+/*--------- contactUs screen end--------*/
+
+
+/*--------- footer screen start--------*/
+
+.lastfooter {
+    background-color: #222222;
+    background-image: url(../img/dotted-map.png);
+    background-size: contain;
+    background-repeat: repeat;
+    color: #b0b0b0;
+}
+
+.lastfooter a {
+    color: #b0b0b0;
+}
+
+.lastfooter>a {
+    width: 50px;
+    height: 50px;
+    background-color: #f2545462;
+}
+
+.lastfooter>a:hover {
+    background-color: #f25454be;
+}
+
+.lastfooter a:hover {
+    color: var(--active-color);
+}
+
+.lastfooter .copyrights a {
+    color: white;
+}
+
+.lastfooter .copyrights a:hover {
+    color: var(--active-color);
+}
+
+.lastfooter .links a {
+    color: white;
+}
+
+.lastfooter .links a:hover {
+    color: var(--active-color);
+}
+
+.tags .tag {
+    border: 2px solid #b0b0b0;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 2px;
+    display: inline-block;
+    background-color: #22222200;
+}
+
+
+/*--------- footer screen end--------*/
